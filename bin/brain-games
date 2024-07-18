@@ -1,2 +1,6 @@
 #!/usr/bin/env php
-Welcome to the Brain Games!
+<?php
+
+require_once('../php-project-45/src/Cli.php');
+
+\welcome\ask_name();
