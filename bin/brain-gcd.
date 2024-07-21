@@ -11,35 +11,28 @@ use function cli\prompt;
 $answer = 0;
 line('Find the greatest common divisor of given numbers.');
 
-for ($i=0; $i<3; $i++) 
-{
+for ($i = 0; $i < 3; $i++) {
     $first_num = rand(0, 100);
     $second_num = rand(0, 100);
-    $full_question = $first_num.' '.$second_num;
-    line('Question: '. $full_question);
-
-    while (($first_num != 0) && ($second_num != 0)) 
-    {
-        if ($first_num > $second_num) 
-        {
+    $full_question = "{$first_num} {$second_num}";
+    line("Question: {$full_question}");
+    while (($first_num != 0) && ($second_num != 0)) {
+        if ($first_num > $second_num) {
             $first_num = $first_num % $second_num;
         } else {
             $second_num = $second_num % $first_num;
         }
     }
-    $answer = $first_num+$second_num;
-
+    $answer = $first_num + $second_num;
     $your_answer = prompt('Your answer');
-    if ($answer == $your_answer) 
-    {
+    if ($answer == $your_answer) {
         line('Correct!');
     } else {
-        line($your_answer." is wrong answer ;(. Correct answer was ".$answer.".");
+        line("{$your_answer} is wrong answer ;(. Correct answer was {$answer}.");
         line("Let's try again, %s!", $name);
         break;
-    }   
-    if ($i==2) 
-    {
+    }
+    if ($i == 2) {
         line("Congratulations, %s!", $name);
-    } 
+    }
 }

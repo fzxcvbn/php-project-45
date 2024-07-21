@@ -11,32 +11,27 @@ use function cli\prompt;
 
 line('Answer "yes" if the number is even, otherwise answer "no".');
 $num = rand(0, 100);
-line('Question: '. $num);
+line("Question: {$num}");
 $answer = prompt('Your answer');
 
-for ($i=1; $i < 3; $i++) 
-{
-    if ((($num%2 == 0) && ($answer == 'yes')) || (($num%2 != 0) && ($answer == 'no'))) 
-    {
+for ($i = 1; $i < 3; $i++) {
+    if ((($num  % 2 == 0) && ($answer == 'yes')) || (($num % 2 != 0) && ($answer == 'no'))) {
         line('Correct!');
         $num = rand(0, 100);
-        line('Question: '. $num);
+        line("Question: {$num}");
         $answer = prompt('Your answer');
     }
-    if (($num%2 != 0) && ($answer == 'yes')) 
-    {
+    if (($num % 2 != 0) && ($answer == 'yes')) {
         line("'yes' is wrong answer ;(. Correct answer was 'no'.");
         line("Let's try again, %s!", $name);
         break;
     }
-    if (($num%2 == 0) && ($answer == 'no')) 
-    {
+    if (($num % 2 == 0) && ($answer == 'no')) {
         line("'no' is wrong answer ;(. Correct answer was 'yes'.");
         line("Let's try again, %s!", $name);
         break;
     }
-    if ($i >= 2) 
-    {
+    if ($i >= 2) {
         line('Correct!');
         line("Congratulations, %s!", $name);
     }

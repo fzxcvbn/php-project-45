@@ -11,35 +11,31 @@ use function cli\prompt;
 
 $answer = 0;
 line('What number is missing in the progression?');
-for ($i=0; $i<3; $i++) 
-{
+for ($i = 0; $i < 3; $i++) {
     $a = rand(0, 50);
     $d = rand(0, 30);
     $elements_progression = rand(5, 15);
     $progression = [$a];
-    for ($j=1; $j<$elements_progression; $j++) 
-    {
-        $c = $a+$d;
-        $progression[]=($c);
+    for ($j = 1; $j < $elements_progression; $j++) {
+        $c = $a + $d;
+        $progression[] = ($c);
         $a = $c;
     }
     $index = rand(0, $elements_progression);
     $answer = $progression[$index];
     $replacements = array($index => "..");
     $progression = array_replace($progression, $replacements);
-    print_r(implode(' ', $progression)."\n");
-
+    print_r(implode(' ', $progression));
+    print_r("\n");
     $your_answer = prompt('Your answer');
-    if ($answer == $your_answer) 
-    {
+    if ($answer == $your_answer) {
         line('Correct!');
     } else {
-        line($your_answer." is wrong answer ;(. Correct answer was ".$answer.".");
+        line("{$your_answer} is wrong answer ;(. Correct answer was {$answer}.");
         line("Let's try again, %s!", $name);
         break;
-    }   
-    if ($i==2) 
-    {
+    }
+    if ($i == 2) {
         line("Congratulations, %s!", $name);
-    } 
+    }
 }
