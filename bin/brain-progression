@@ -21,7 +21,7 @@ for ($i = 0; $i < 3; $i++) {
         $progression[] = ($c);
         $a = $c;
     }
-    $index = rand(0, $elements_progression);
+    $index = rand(0, $elements_progression-1);
     $answer = $progression[$index];
     $replacements = array($index => "..");
     $progression = array_replace($progression, $replacements);
