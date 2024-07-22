@@ -1,5 +1,14 @@
 {
     "name": "hexlet/code",
+    "autoload": {
+        "files": [
+            "src/Games/progression.php",
+            "src/Games/calc.php",
+            "src/Games/even.php",
+            "src/Games/prime.php",
+            "src/Games/gcd.php"
+        ]
+    },
     "require": {
         "wp-cli/php-cli-tools": "^0.12.0"
     },

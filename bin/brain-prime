@@ -1,38 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-require_once(__DIR__ . '/../vendor/autoload.php');
-require_once('../php-project-45/src/Cli.php');
+require_once __DIR__ . '/../vendor/autoload.php';
 
-use function cli\line;
-use function cli\prompt;
+use function prime\prime_game;
 
-\welcome\ask_name();
-
-line('Answer "yes" if given number is prime. Otherwise answer "no".');
-$prime_nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-
-for ($i = 0; $i < 3; $i++) {
-    $num = rand(0, 100);
-    line("Question: {$num}");
-    foreach ($prime_nums as $index => $prime_num) {
-        if ($prime_nums[$index] == $num) {
-            $answer = 'yes';
-            break;
-        } else {
-            $answer = 'no';
-        }
-    }
-
-    $your_answer = prompt('Your answer');
-    if ($answer == $your_answer) {
-        line('Correct!');
-    } else {
-        line("{$your_answer} is wrong answer ;(. Correct answer was {$answer}.");
-        line("Let's try again, %s!", $name);
-        break;
-    }
-    if ($i == 2) {
-        line("Congratulations, %s!", $name);
-    }
-}
+prime_game();

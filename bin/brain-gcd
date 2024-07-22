@@ -1,38 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-require_once(__DIR__ . '/../vendor/autoload.php');
-require_once('../php-project-45/src/Cli.php');
+require_once __DIR__ . '/../vendor/autoload.php';
 
-use function cli\line;
-use function cli\prompt;
+use function gcd\gcd_game;
 
-\welcome\ask_name();
-$answer = 0;
-line('Find the greatest common divisor of given numbers.');
-
-for ($i = 0; $i < 3; $i++) {
-    $first_num = rand(0, 100);
-    $second_num = rand(0, 100);
-    $full_question = "{$first_num} {$second_num}";
-    line("Question: {$full_question}");
-    while (($first_num != 0) && ($second_num != 0)) {
-        if ($first_num > $second_num) {
-            $first_num = $first_num % $second_num;
-        } else {
-            $second_num = $second_num % $first_num;
-        }
-    }
-    $answer = $first_num + $second_num;
-    $your_answer = prompt('Your answer');
-    if ($answer == $your_answer) {
-        line('Correct!');
-    } else {
-        line("{$your_answer} is wrong answer ;(. Correct answer was {$answer}.");
-        line("Let's try again, %s!", $name);
-        break;
-    }
-    if ($i == 2) {
-        line("Congratulations, %s!", $name);
-    }
-}
+gcd_game();

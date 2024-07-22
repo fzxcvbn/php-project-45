@@ -1,42 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-require_once(__DIR__ . '/../vendor/autoload.php');
-require_once('../php-project-45/src/Cli.php');
+require_once __DIR__ . '/../vendor/autoload.php';
 
-use function cli\line;
-use function cli\prompt;
+use function calc\calc_game;
 
-\welcome\ask_name();
-
-$signs = ['+', '-', '*'];
-line('What is the result of the expression?');
-for ($i = 0; $i < 3; $i++) {
-    $rand_sign = array_rand($signs);
-    $first_num = rand(0, 100);
-    $second_num = rand(0, 100);
-    $full_question = "{$first_num} {$signs[$rand_sign]} {$second_num}";
-    line("Question: {$full_question}");
-    switch ($signs[$rand_sign]) {
-        case '+':
-            $answer = $first_num + $second_num;
-            break;
-        case '-':
-            $answer = $first_num - $second_num;
-            break;
-        case '*':
-            $answer = $first_num * $second_num;
-            break;
-    }
-    $your_answer = prompt('Your answer');
-    if ($answer == $your_answer) {
-        line('Correct!');
-    } else {
-        line("{$your_answer} is wrong answer ;(. Correct answer was {$answer}.");
-        line("Let's try again, %s!", $name);
-        break;
-    }
-    if ($i == 2) {
-        line("Congratulations, %s!", $name);
-    }
-}
+calc_game();
