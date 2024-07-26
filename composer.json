@@ -6,7 +6,8 @@
             "src/Games/calc.php",
             "src/Games/even.php",
             "src/Games/prime.php",
-            "src/Games/gcd.php"
+            "src/Games/gcd.php",
+            "src/Engine.php"
         ]
     },
     "require": {

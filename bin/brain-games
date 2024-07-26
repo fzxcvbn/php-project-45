@@ -3,4 +3,4 @@
 
 require_once('../php-project-45/src/Cli.php');
 
-\welcome\ask_name();
+\welcome\askName();

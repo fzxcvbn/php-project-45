@@ -5,18 +5,16 @@ namespace even;
 use function cli\line;
 use function cli\prompt;
 
-function even_game()
+function evenGame()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-
+    global $name;
+    welcome();
     line('Answer "yes" if the number is even, otherwise answer "no".');
     $num = rand(0, 100);
     line("Question: {$num}");
     $answer = prompt('Your answer');
-    $count_games = 3;
-    for ($i = 1; $i < $count_games; $i++) {
+    $countGames = 3;
+    for ($i = 1; $i < $countGames; $i++) {
         if ((($num % 2 == 0) && ($answer == 'yes')) || (($num % 2 != 0) && ($answer == 'no'))) {
             line('Correct!');
             $num = rand(0, 100);

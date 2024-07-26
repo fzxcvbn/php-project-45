@@ -5,37 +5,26 @@ namespace gcd;
 use function cli\line;
 use function cli\prompt;
 
-function gcd_game()
+function gcdGame()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    global $name; $answer; $i; $yourAnswer;
+    welcome();
     $answer = 0;
     line('Find the greatest common divisor of given numbers.');
-    $count_games = 3;
-    for ($i = 0; $i < $count_games; $i++) {
-        $first_num = rand(0, 100);
-        $second_num = rand(0, 100);
-        $full_question = "{$first_num} {$second_num}";
-        line("Question: {$full_question}");
-        while (($first_num != 0) && ($second_num != 0)) {
-            if ($first_num > $second_num) {
-                $first_num = $first_num % $second_num;
+    $countGames = 3;
+    for ($i = 0; $i < $countGames; $i++) {
+        $firstNum = rand(0, 100);
+        $secondNum = rand(0, 100);
+        $fullQuestion = "{$firstNum} {$secondNum}";
+        line("Question: {$fullQuestion}");
+        while (($firstNum != 0) && ($secondNum != 0)) {
+            if ($firstNum > $secondNum) {
+                $firstNum = $firstNum % $secondNum;
             } else {
-                $second_num = $second_num % $first_num;
+                $secondNum = $secondNum % $firstNum;
             }
         }
-        $answer = $first_num + $second_num;
-        $your_answer = prompt('Your answer');
-        if ($answer == $your_answer) {
-            line('Correct!');
-        } else {
-            line("{$your_answer} is wrong answer ;(. Correct answer was {$answer}.");
-            line("Let's try again, %s!", $name);
-            break;
-        }
-        if ($i == 2) {
-            line("Congratulations, %s!", $name);
-        }
+        $answer = $firstNum + $secondNum;
+        yourAnswer();
     }
 }

@@ -3,6 +3,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function calc\calc_game;
+use function calc\calcGame;
 
-calc_game();
+calcGame();
