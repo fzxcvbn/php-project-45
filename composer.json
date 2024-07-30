@@ -7,7 +7,8 @@
             "src/Games/even.php",
             "src/Games/prime.php",
             "src/Games/gcd.php",
-            "src/Engine.php"
+            "src/Engine.php",
+            "src/Cli.php"
         ]
     },
     "require": {
