@@ -4,11 +4,11 @@ namespace calc;
 
 use function cli\line;
 use function cli\prompt;
-    
+
 function calcGame()
 {
     global $name;
-    global $answer; 
+    global $answer;
     global $i;
     global $yourAnswer;
     welcome();

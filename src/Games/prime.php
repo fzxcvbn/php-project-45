@@ -8,7 +8,7 @@ use function cli\prompt;
 function primeGame()
 {
     global $name;
-    global $answer; 
+    global $answer;
     global $i;
     global $yourAnswer;
     welcome();
@@ -26,7 +26,7 @@ function primeGame()
                 $answer = 'no';
             }
         }
-        yourAnswer(); 
+        yourAnswer();
         if ($answer != $yourAnswer) {
             break;
         }

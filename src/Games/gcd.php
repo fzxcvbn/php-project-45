@@ -8,7 +8,7 @@ use function cli\prompt;
 function gcdGame()
 {
     global $name;
-    global $answer; 
+    global $answer;
     global $i;
     global $yourAnswer;
     welcome();
