@@ -29,6 +29,7 @@ function progressionGame()
         $answer = $progression[$index];
         $replacements = array($index => "..");
         $progression = array_replace($progression, $replacements);
+        print_r("Question: ");
         print_r(implode(' ', $progression));
         print_r("\n");
         yourAnswer();
