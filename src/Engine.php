@@ -24,8 +24,5 @@ function yourAnswer()
             line("{$yourAnswer} is wrong answer ;(. Correct answer was {$answer}.");
             line("Let's try again, %s!", $name);
         }
-        if ($i == 3) {
-            line("Congratulations, %s!", $name);
-        }
     }
 }
