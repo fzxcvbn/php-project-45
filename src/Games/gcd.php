@@ -29,5 +29,11 @@ function gcdGame()
         }
         $answer = $firstNum + $secondNum;
         yourAnswer();
+        if ($answer != $yourAnswer) {
+            break;
+        }
+        if ($i == 2) {
+            line("Congratulations, %s!", $name);
+        }
     }
 }

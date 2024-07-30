@@ -32,5 +32,11 @@ function progressionGame()
         print_r(implode(' ', $progression));
         print_r("\n");
         yourAnswer();
+        if ($answer != $yourAnswer) {
+            break;
+        }
+        if ($i == 2) {
+            line("Congratulations, %s!", $name);
+        }
     }
 }
