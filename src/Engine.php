@@ -13,7 +13,7 @@ function welcome()
 function yourAnswer()
 {
     global $name;
-    global $answer; 
+    global $answer;
     global $i;
     global $yourAnswer;
     for ($g = 0; $g < 1; $g++) {
