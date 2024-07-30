@@ -9,7 +9,6 @@ function calcGame()
 {
     global $name;
     global $answer;
-    global $i;
     global $yourAnswer;
     welcome();
     $signs = ['+', '-', '*'];

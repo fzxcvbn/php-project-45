@@ -9,7 +9,6 @@ function progressionGame()
 {
     global $name;
     global $answer;
-    global $i;
     global $yourAnswer;
     welcome();
     $answer = 0;

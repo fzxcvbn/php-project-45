@@ -9,7 +9,6 @@ function primeGame()
 {
     global $name;
     global $answer;
-    global $i;
     global $yourAnswer;
     welcome();
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
