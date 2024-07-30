@@ -12,7 +12,10 @@ function welcome() {
 
 function yourAnswer() 
 {
-    global $name; $answer; $i; $yourAnswer;
+    global $name;
+    global $answer; 
+    global $i;
+    global $yourAnswer;
     for($g = 0; $g < 1; $g++) {
         $yourAnswer = prompt('Your answer');
         if ($answer == $yourAnswer) {

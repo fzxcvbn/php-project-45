@@ -7,7 +7,10 @@ use function cli\prompt;
 
 function gcdGame()
 {
-    global $name; $answer; $i; $yourAnswer;
+    global $name;
+    global $answer; 
+    global $i;
+    global $yourAnswer;
     welcome();
     $answer = 0;
     line('Find the greatest common divisor of given numbers.');

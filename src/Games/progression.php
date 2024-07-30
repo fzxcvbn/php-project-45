@@ -7,7 +7,10 @@ use function cli\prompt;
 
 function progressionGame()
 {
-    global $name; $answer; $i; $yourAnswer;
+    global $name;
+    global $answer; 
+    global $i;
+    global $yourAnswer;
     welcome();
     $answer = 0;
     line('What number is missing in the progression?');

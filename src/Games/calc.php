@@ -7,7 +7,10 @@ use function cli\prompt;
     
 function calcGame()
 {
-    global $name; $answer; $i; $yourAnswer;
+    global $name;
+    global $answer; 
+    global $i;
+    global $yourAnswer;
     welcome();
     $signs = ['+', '-', '*'];
     line('What is the result of the expression?');
