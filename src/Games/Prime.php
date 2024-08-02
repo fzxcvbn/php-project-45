@@ -7,30 +7,23 @@ use function cli\prompt;
 
 function primeGame()
 {
-    global $name;
-    global $answer;
-    global $yourAnswer;
-    welcome();
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
     $primeNums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
     $countGames = 3;
+    $arrayAnswer = [];
+    $arrayQuestion = [];
     for ($i = 0; $i < $countGames; $i++) {
-        $num = rand(0, 100);
-        line("Question: {$num}");
+        $question = rand(0, 100);
         foreach ($primeNums as $index => $primeNum) {
-            if ($primeNums[$index] == $num) {
+            if ($primeNums[$index] == $question) {
                 $answer = 'yes';
                 break;
             } else {
                 $answer = 'no';
             }
         }
-        yourAnswer();
-        if ($answer != $yourAnswer) {
-            break;
-        }
-        if ($i == 2) {
-            line("Congratulations, %s!", $name);
-        }
+        array_push($arrayAnswer, $answer);
+        array_push($arrayQuestion, $question);
     }
+    engine($arrayAnswer, $arrayQuestion);
 }

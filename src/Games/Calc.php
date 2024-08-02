@@ -7,19 +7,16 @@ use function cli\prompt;
 
 function calcGame()
 {
-    global $name;
-    global $answer;
-    global $yourAnswer;
-    welcome();
-    $signs = ['+', '-', '*'];
     line('What is the result of the expression?');
+    $signs = ['+', '-', '*'];
+    $arrayAnswer = [];
+    $arrayQuestion = [];
     $countGames = 3;
     for ($i = 0; $i < $countGames; $i++) {
         $randSign = array_rand($signs);
         $firstNum = rand(0, 100);
         $secondNum = rand(0, 100);
-        $fullQuestion = "{$firstNum} {$signs[$randSign]} {$secondNum}";
-        line("Question: {$fullQuestion}");
+        $question = "{$firstNum} {$signs[$randSign]} {$secondNum}";
         switch ($signs[$randSign]) {
             case '+':
                 $answer = $firstNum + $secondNum;
@@ -31,12 +28,8 @@ function calcGame()
                 $answer = $firstNum * $secondNum;
                 break;
         }
-        yourAnswer();
-        if ($answer != $yourAnswer) {
-            break;
-        }
-        if ($i == 2) {
-            line("Congratulations, %s!", $name);
-        }
+        array_push($arrayAnswer, $answer);
+        array_push($arrayQuestion, $question);
     }
+    engine($arrayAnswer, $arrayQuestion);
 }

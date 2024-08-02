@@ -7,13 +7,10 @@ use function cli\prompt;
 
 function progressionGame()
 {
-    global $name;
-    global $answer;
-    global $yourAnswer;
-    welcome();
-    $answer = 0;
     line('What number is missing in the progression?');
     $countGames = 3;
+    $arrayAnswer = [];
+    $arrayQuestion = [];
     for ($i = 0; $i < $countGames; $i++) {
         $a = rand(0, 50);
         $d = rand(0, 30);
@@ -28,15 +25,9 @@ function progressionGame()
         $answer = $progression[$index];
         $replacements = array($index => "..");
         $progression = array_replace($progression, $replacements);
-        print_r("Question: ");
-        print_r(implode(' ', $progression));
-        print_r("\n");
-        yourAnswer();
-        if ($answer != $yourAnswer) {
-            break;
-        }
-        if ($i == 2) {
-            line("Congratulations, %s!", $name);
-        }
+        $question = (implode(' ', $progression));
+        array_push($arrayAnswer, $answer);
+        array_push($arrayQuestion, $question);
     }
+    engine($arrayAnswer, $arrayQuestion);
 }
