@@ -2,10 +2,12 @@
 
 use function cli\line;
 use function cli\prompt;
+
 /**
 *@param array<mixed> $arrayAnswer;
 *@param array<mixed> $arrayQuestion;
 */
+
 function engine($arrayAnswer, $arrayQuestion)
 {
     line('Welcome to the Brain Game!');
