@@ -5,15 +5,15 @@ namespace prime;
 use function cli\line;
 use function cli\prompt;
 
-function primeGame()
+function startPrimeGame()
 {
-    line('Answer "yes" if given number is prime. Otherwise answer "no".');
+    askAQuetionPrime();
     $primeNums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-    $countGames = 3;
+    $gamesCount = 3;
     $answer = '';
-    $arrayAnswer = [];
-    $arrayQuestion = [];
-    for ($i = 0; $i < $countGames; $i++) {
+    $aAnswer = [];
+    $aQuestion = [];
+    for ($i = 0; $i < $gamesCount; $i++) {
         $question = rand(0, 100);
         foreach ($primeNums as $primeNum) {
             if ($primeNum == $question) {
@@ -23,8 +23,8 @@ function primeGame()
                 $answer = 'no';
             }
         }
-        array_push($arrayAnswer, $answer);
-        array_push($arrayQuestion, $question);
+        array_push($aAnswer, $answer);
+        array_push($aQuestion, $question);
     }
-    engine($arrayAnswer, $arrayQuestion);
+    launch($aAnswer, $aQuestion);
 }

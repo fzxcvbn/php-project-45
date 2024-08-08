@@ -5,21 +5,21 @@ namespace even;
 use function cli\line;
 use function cli\prompt;
 
-function evenGame()
+function startEvenGame()
 {
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-    $countGames = 3;
-    $arrayAnswer = [];
-    $arrayQuestion = [];
-    for ($i = 0; $i < $countGames; $i++) {
+    askAQuetionEven();
+    $gamesCount = 3;
+    $aAnswer = [];
+    $aQuestion = [];
+    for ($i = 0; $i < $gamesCount; $i++) {
         $question = rand(0, 100);
         if ($question % 2 == 0) {
             $answer = 'yes';
         } else {
             $answer = 'no';
         }
-        array_push($arrayAnswer, $answer);
-        array_push($arrayQuestion, $question);
+        array_push($aAnswer, $answer);
+        array_push($aQuestion, $question);
     }
-    engine($arrayAnswer, $arrayQuestion);
+    launch($aAnswer, $aQuestion);
 }

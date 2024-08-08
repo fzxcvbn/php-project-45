@@ -5,13 +5,13 @@ namespace gcd;
 use function cli\line;
 use function cli\prompt;
 
-function gcdGame()
+function startGcdGame()
 {
-    line('Find the greatest common divisor of given numbers.');
-    $countGames = 3;
-    $arrayAnswer = [];
-    $arrayQuestion = [];
-    for ($i = 0; $i < $countGames; $i++) {
+    askAQuetionGcd();
+    $gamesCount = 3;
+    $aAnswer = [];
+    $aQuestion = [];
+    for ($i = 0; $i < $gamesCount; $i++) {
         $firstNum = rand(0, 100);
         $secondNum = rand(0, 100);
         $question = "{$firstNum} {$secondNum}";
@@ -23,8 +23,8 @@ function gcdGame()
             }
         }
         $answer = $firstNum + $secondNum;
-        array_push($arrayAnswer, $answer);
-        array_push($arrayQuestion, $question);
+        array_push($aAnswer, $answer);
+        array_push($aQuestion, $question);
     }
-    engine($arrayAnswer, $arrayQuestion);
+    launch($aAnswer, $aQuestion);
 }

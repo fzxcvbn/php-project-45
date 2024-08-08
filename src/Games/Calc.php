@@ -5,14 +5,14 @@ namespace calc;
 use function cli\line;
 use function cli\prompt;
 
-function calcGame()
+function startCalcGame()
 {
-    line('What is the result of the expression?');
+    askAQuetionCalc();
     $signs = ['+', '-', '*'];
-    $arrayAnswer = [];
-    $arrayQuestion = [];
-    $countGames = 3;
-    for ($i = 0; $i < $countGames; $i++) {
+    $aAnswer = [];
+    $aQuestion = [];
+    $gamesCount = 3;
+    for ($i = 0; $i < $gamesCount; $i++) {
         $randSign = array_rand($signs);
         $firstNum = rand(0, 100);
         $secondNum = rand(0, 100);
@@ -28,8 +28,8 @@ function calcGame()
                 $answer = $firstNum * $secondNum;
                 break;
         }
-        array_push($arrayAnswer, $answer);
-        array_push($arrayQuestion, $question);
+        array_push($aAnswer, $answer);
+        array_push($aQuestion, $question);
     }
-    engine($arrayAnswer, $arrayQuestion);
+    launch($aAnswer, $aQuestion);
 }

@@ -4,30 +4,50 @@ use function cli\line;
 use function cli\prompt;
 
 /**
-*@param array<mixed> $arrayAnswer;
-*@param array<mixed> $arrayQuestion;
+*@param array<mixed> $aAnswer;
+*@param array<mixed> $aQuestion;
 */
 
-function engine($arrayAnswer, $arrayQuestion)
+function launch($aAnswer, $aQuestion)
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    $countGames = 3;
-    $correctAnswer = 0;
-    foreach ($arrayQuestion as $index => $question) {
+    foreach ($aQuestion as $index => $question) {
         line("Question: {$question}");
         $yourAnswer = prompt('Your answer');
-        if ($arrayAnswer[$index] == $yourAnswer) {
+        if ($aAnswer[$index] == $yourAnswer) {
             line('Correct!');
-            $correctAnswer += 1;
         } else {
-            line("{$yourAnswer} is wrong answer ;(. Correct answer was {$arrayAnswer[$index]}.");
+            line("{$yourAnswer} is wrong answer ;(. Correct answer was {$aAnswer[$index]}.");
             line("Let's try again, %s!", $name);
-            break;
+            exit;
         }
     }
-    if ($correctAnswer == 3) {
-        line("Congratulations, %s!", $name);
-    }
+    line("Congratulations, %s!", $name);
+}
+
+function askAQuetionCalc()
+{
+    line('What is the result of the expression?');
+}
+
+function askAQuetionGcd()
+{
+    line('Find the greatest common divisor of given numbers.');
+}
+
+function askAQuetionEven()
+{
+    line('Answer "yes" if the number is even, otherwise answer "no".');
+}
+
+function askAQuetionPrime()
+{
+    line('Answer "yes" if given number is prime. Otherwise answer "no".');
+}
+
+function askAQuetionProgression()
+{
+    line('What number is missing in the progression?');
 }
