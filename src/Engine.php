@@ -4,50 +4,49 @@ use function cli\line;
 use function cli\prompt;
 
 /**
-*@param array<mixed> $aAnswer;
-*@param array<mixed> $aQuestion;
+*@param array<mixed> $Answers;
+*@param array<mixed> $Questions;
 */
 
-function launch($aAnswer, $aQuestion)
+function launch($Answers, $Questions, $numGame)
 {
+    $welcomeQuestion = [
+        'What is the result of the expression?',
+        'Find the greatest common divisor of given numbers.',
+        'Answer "yes" if the number is even, otherwise answer "no".',
+        'Answer "yes" if given number is prime. Otherwise answer "no".',
+        'What number is missing in the progression?'
+    ];
+    switch ($numGame) {
+        case 1:
+            line($welcomeQuestion[0]);
+            break;
+        case 2:
+            line($welcomeQuestion[1]);
+            break;
+        case 3:
+            line($welcomeQuestion[2]);
+            break;
+        case 4:
+            line($welcomeQuestion[3]);
+            break;
+        case 5:
+            line($welcomeQuestion[4]);
+            break;
+    }
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    foreach ($aQuestion as $index => $question) {
+    foreach ($Questions as $index => $question) {
         line("Question: {$question}");
         $yourAnswer = prompt('Your answer');
-        if ($aAnswer[$index] == $yourAnswer) {
+        if ($Answers[$index] == $yourAnswer) {
             line('Correct!');
         } else {
-            line("{$yourAnswer} is wrong answer ;(. Correct answer was {$aAnswer[$index]}.");
+            line("{$yourAnswer} is wrong answer ;(. Correct answer was {$Answers[$index]}.");
             line("Let's try again, %s!", $name);
             exit;
         }
     }
     line("Congratulations, %s!", $name);
-}
-
-function askAQuetionCalc()
-{
-    line('What is the result of the expression?');
-}
-
-function askAQuetionGcd()
-{
-    line('Find the greatest common divisor of given numbers.');
-}
-
-function askAQuetionEven()
-{
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-}
-
-function askAQuetionPrime()
-{
-    line('Answer "yes" if given number is prime. Otherwise answer "no".');
-}
-
-function askAQuetionProgression()
-{
-    line('What number is missing in the progression?');
 }

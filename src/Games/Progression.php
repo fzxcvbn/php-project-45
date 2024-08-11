@@ -7,10 +7,9 @@ use function cli\prompt;
 
 function startProgressionGame()
 {
-    askAQuetionProgression();
     $gamesCount = 3;
-    $aAnswer = [];
-    $aQuestion = [];
+    $Answers = [];
+    $Questions = [];
     for ($i = 0; $i < $gamesCount; $i++) {
         $a = rand(0, 50);
         $d = rand(0, 30);
@@ -26,8 +25,9 @@ function startProgressionGame()
         $replacements = array($index => "..");
         $progression = array_replace($progression, $replacements);
         $question = (implode(' ', $progression));
-        array_push($aAnswer, $answer);
-        array_push($aQuestion, $question);
+        array_push($Answers, $answer);
+        array_push($Questions, $question);
     }
-    launch($aAnswer, $aQuestion);
+    $numGame = 5;
+    launch($Answers, $Questions, $numGame);
 }

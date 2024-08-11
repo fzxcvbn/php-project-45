@@ -7,10 +7,9 @@ use function cli\prompt;
 
 function startCalcGame()
 {
-    askAQuetionCalc();
     $signs = ['+', '-', '*'];
-    $aAnswer = [];
-    $aQuestion = [];
+    $Answers = [];
+    $Questions = [];
     $gamesCount = 3;
     for ($i = 0; $i < $gamesCount; $i++) {
         $randSign = array_rand($signs);
@@ -28,8 +27,9 @@ function startCalcGame()
                 $answer = $firstNum * $secondNum;
                 break;
         }
-        array_push($aAnswer, $answer);
-        array_push($aQuestion, $question);
+        array_push($Answers, $answer);
+        array_push($Questions, $question);
     }
-    launch($aAnswer, $aQuestion);
+    $numGame = 1;
+    launch($Answers, $Questions, $numGame);
 }

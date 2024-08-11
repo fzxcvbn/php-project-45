@@ -7,12 +7,11 @@ use function cli\prompt;
 
 function startPrimeGame()
 {
-    askAQuetionPrime();
     $primeNums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
     $gamesCount = 3;
     $answer = '';
-    $aAnswer = [];
-    $aQuestion = [];
+    $Answers = [];
+    $Questions = [];
     for ($i = 0; $i < $gamesCount; $i++) {
         $question = rand(0, 100);
         foreach ($primeNums as $primeNum) {
@@ -23,8 +22,9 @@ function startPrimeGame()
                 $answer = 'no';
             }
         }
-        array_push($aAnswer, $answer);
-        array_push($aQuestion, $question);
+        array_push($Answers, $answer);
+        array_push($Questions, $question);
     }
-    launch($aAnswer, $aQuestion);
+    $numGame = 4;
+    launch($Answers, $Questions, $numGame);
 }
