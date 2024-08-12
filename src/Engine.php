@@ -6,7 +6,7 @@ use function cli\prompt;
 /**
 *@param array<mixed> $Answers;
 *@param array<mixed> $Questions;
-*@param int $welcomeQuestion;
+*@param string $welcomeQuestion;
 */
 
 function launch($Answers, $Questions, $welcomeQuestion)
