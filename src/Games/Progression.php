@@ -28,6 +28,5 @@ function startProgressionGame()
         array_push($Answers, $answer);
         array_push($Questions, $question);
     }
-    $numGame = 5;
-    launch($Answers, $Questions, $numGame);
+    launch($Answers, $Questions, 'What number is missing in the progression?');
 }

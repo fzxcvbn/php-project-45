@@ -20,6 +20,5 @@ function startEvenGame()
         array_push($Answers, $answer);
         array_push($Questions, $question);
     }
-    $numGame = 3;
-    launch($Answers, $Questions, $numGame);
+    launch($Answers, $Questions, 'Answer "yes" if the number is even, otherwise answer "no".');
 }

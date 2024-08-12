@@ -30,6 +30,5 @@ function startCalcGame()
         array_push($Answers, $answer);
         array_push($Questions, $question);
     }
-    $numGame = 1;
-    launch($Answers, $Questions, $numGame);
+    launch($Answers, $Questions, 'What is the result of the expression?');
 }

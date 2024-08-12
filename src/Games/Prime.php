@@ -25,6 +25,5 @@ function startPrimeGame()
         array_push($Answers, $answer);
         array_push($Questions, $question);
     }
-    $numGame = 4;
-    launch($Answers, $Questions, $numGame);
+    launch($Answers, $Questions, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 }

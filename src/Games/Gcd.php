@@ -25,6 +25,5 @@ function startGcdGame()
         array_push($Answers, $answer);
         array_push($Questions, $question);
     }
-    $numGame = 2;
-    launch($Answers, $Questions, $numGame);
+    launch($Answers, $Questions, 'Find the greatest common divisor of given numbers.');
 }
