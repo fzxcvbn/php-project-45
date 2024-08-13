@@ -4,13 +4,13 @@ namespace progression;
 
 use function cli\line;
 use function cli\prompt;
+use const gamesCount;
 
 function startProgressionGame()
 {
-    $gamesCount = 3;
-    $Answers = [];
-    $Questions = [];
-    for ($i = 0; $i < $gamesCount; $i++) {
+    $answers = [];
+    $questions = [];
+    for ($i = 0; $i < gamesCount; $i++) {
         $a = rand(0, 50);
         $d = rand(0, 30);
         $elementsProgression = rand(5, 15);
@@ -25,8 +25,8 @@ function startProgressionGame()
         $replacements = array($index => "..");
         $progression = array_replace($progression, $replacements);
         $question = (implode(' ', $progression));
-        array_push($Answers, $answer);
-        array_push($Questions, $question);
+        array_push($answers, $answer);
+        array_push($questions, $question);
     }
-    launch($Answers, $Questions, 'What number is missing in the progression?');
+    launch($answers, $questions, 'What number is missing in the progression?');
 }

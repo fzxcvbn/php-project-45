@@ -4,21 +4,21 @@ namespace even;
 
 use function cli\line;
 use function cli\prompt;
+use const gamesCount;
 
 function startEvenGame()
 {
-    $gamesCount = 3;
-    $Answers = [];
-    $Questions = [];
-    for ($i = 0; $i < $gamesCount; $i++) {
+    $answers = [];
+    $questions = [];
+    for ($i = 0; $i < gamesCount; $i++) {
         $question = rand(0, 100);
         if ($question % 2 == 0) {
             $answer = 'yes';
         } else {
             $answer = 'no';
         }
-        array_push($Answers, $answer);
-        array_push($Questions, $question);
+        array_push($answers, $answer);
+        array_push($questions, $question);
     }
-    launch($Answers, $Questions, 'Answer "yes" if the number is even, otherwise answer "no".');
+    launch($answers, $questions, 'Answer "yes" if the number is even, otherwise answer "no".');
 }

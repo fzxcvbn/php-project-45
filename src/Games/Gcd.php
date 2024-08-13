@@ -4,13 +4,13 @@ namespace gcd;
 
 use function cli\line;
 use function cli\prompt;
+use const gamesCount;
 
 function startGcdGame()
 {
-    $gamesCount = 3;
-    $Answers = [];
-    $Questions = [];
-    for ($i = 0; $i < $gamesCount; $i++) {
+    $answers = [];
+    $questions = [];
+    for ($i = 0; $i < gamesCount; $i++) {
         $firstNum = rand(0, 100);
         $secondNum = rand(0, 100);
         $question = "{$firstNum} {$secondNum}";
@@ -22,8 +22,8 @@ function startGcdGame()
             }
         }
         $answer = $firstNum + $secondNum;
-        array_push($Answers, $answer);
-        array_push($Questions, $question);
+        array_push($answers, $answer);
+        array_push($questions, $question);
     }
-    launch($Answers, $Questions, 'Find the greatest common divisor of given numbers.');
+    launch($answers, $questions, 'Find the greatest common divisor of given numbers.');
 }

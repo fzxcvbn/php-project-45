@@ -3,25 +3,27 @@
 use function cli\line;
 use function cli\prompt;
 
+const gamesCount = 3;
+
 /**
-*@param array<mixed> $Answers;
-*@param array<mixed> $Questions;
+*@param array<mixed> $answers;
+*@param array<mixed> $questions;
 *@param string $welcomeQuestion;
 */
 
-function launch($Answers, $Questions, $welcomeQuestion)
+function launch($answers, $questions, $welcomeQuestion)
 {
     line($welcomeQuestion);
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    foreach ($Questions as $index => $question) {
+    foreach ($questions as $index => $question) {
         line("Question: {$question}");
-        $yourAnswer = prompt('Your answer');
-        if ($Answers[$index] == $yourAnswer) {
+        $userAnswer = prompt('Your answer');
+        if ($answers[$index] == $userAnswer) {
             line('Correct!');
         } else {
-            line("{$yourAnswer} is wrong answer ;(. Correct answer was {$Answers[$index]}.");
+            line("{$userAnswer} is wrong answer ;(. Correct answer was {$answers[$index]}.");
             line("Let's try again, %s!", $name);
             exit;
         }

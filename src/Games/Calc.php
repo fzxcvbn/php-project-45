@@ -4,14 +4,14 @@ namespace calc;
 
 use function cli\line;
 use function cli\prompt;
+use const gamesCount;
 
 function startCalcGame()
 {
     $signs = ['+', '-', '*'];
-    $Answers = [];
-    $Questions = [];
-    $gamesCount = 3;
-    for ($i = 0; $i < $gamesCount; $i++) {
+    $answers = [];
+    $questions = [];
+    for ($i = 0; $i < gamesCount; $i++) {
         $randSign = array_rand($signs);
         $firstNum = rand(0, 100);
         $secondNum = rand(0, 100);
@@ -27,8 +27,8 @@ function startCalcGame()
                 $answer = $firstNum * $secondNum;
                 break;
         }
-        array_push($Answers, $answer);
-        array_push($Questions, $question);
+        array_push($answers, $answer);
+        array_push($questions, $question);
     }
-    launch($Answers, $Questions, 'What is the result of the expression?');
+    launch($answers, $questions, 'What is the result of the expression?');
 }
