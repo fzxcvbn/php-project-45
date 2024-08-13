@@ -18,10 +18,8 @@ function startPrimeGame()
             if ($question % $j === 0) {
                 $answer = 'no';
                 break;
-            } else {
-                $answer = 'yes';
-                break;
             }
+            $answer = 'yes';
         }
         array_push($answers, $answer);
         array_push($questions, $question);
