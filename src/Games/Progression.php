@@ -12,14 +12,14 @@ function startProgressionGame()
     $answers = [];
     $questions = [];
     for ($i = 0; $i < GAMESCOUNT; $i++) {
-        $a = rand(0, 50);
-        $d = rand(0, 30);
+        $firstElementProgression = rand(0, 50);
+        $differenceProgression = rand(0, 30);
         $elementsProgression = rand(5, 15);
-        $progression = [$a];
+        $progression = [$firstElementProgression];
         for ($j = 1; $j < $elementsProgression; $j++) {
-            $c = $a + $d;
-            $progression[] = ($c);
-            $a = $c;
+            $nextElementProgression = $firstElementProgression + $differenceProgression;
+            $progression[] = ($nextElementProgression);
+            $firstElementProgression = $nextElementProgression;
         }
         $index = rand(0, $elementsProgression - 1);
         $answer = $progression[$index];
