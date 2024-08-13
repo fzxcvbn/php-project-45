@@ -4,14 +4,15 @@ namespace calc;
 
 use function cli\line;
 use function cli\prompt;
-use const gamesCount;
+
+use const GAMESCOUNT;
 
 function startCalcGame()
 {
     $signs = ['+', '-', '*'];
     $answers = [];
     $questions = [];
-    for ($i = 0; $i < gamesCount; $i++) {
+    for ($i = 0; $i < GAMESCOUNT; $i++) {
         $randSign = array_rand($signs);
         $firstNum = rand(0, 100);
         $secondNum = rand(0, 100);

@@ -4,13 +4,14 @@ namespace gcd;
 
 use function cli\line;
 use function cli\prompt;
-use const gamesCount;
+
+use const GAMESCOUNT;
 
 function startGcdGame()
 {
     $answers = [];
     $questions = [];
-    for ($i = 0; $i < gamesCount; $i++) {
+    for ($i = 0; $i < GAMESCOUNT; $i++) {
         $firstNum = rand(0, 100);
         $secondNum = rand(0, 100);
         $question = "{$firstNum} {$secondNum}";

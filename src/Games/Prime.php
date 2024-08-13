@@ -4,14 +4,15 @@ namespace prime;
 
 use function cli\line;
 use function cli\prompt;
-use const gamesCount;
+
+use const GAMESCOUNT;
 
 function startPrimeGame()
 {
     $answer = '';
     $answers = [];
     $questions = [];
-    for ($i = 0; $i < gamesCount; $i++) {
+    for ($i = 0; $i < GAMESCOUNT; $i++) {
         $question = rand(0, 100);
         for ($j = 2; $j < $question; $j++) {
             if ($question % $j === 0) {

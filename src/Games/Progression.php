@@ -4,13 +4,14 @@ namespace progression;
 
 use function cli\line;
 use function cli\prompt;
-use const gamesCount;
+
+use const GAMESCOUNT;
 
 function startProgressionGame()
 {
     $answers = [];
     $questions = [];
-    for ($i = 0; $i < gamesCount; $i++) {
+    for ($i = 0; $i < GAMESCOUNT; $i++) {
         $a = rand(0, 50);
         $d = rand(0, 30);
         $elementsProgression = rand(5, 15);

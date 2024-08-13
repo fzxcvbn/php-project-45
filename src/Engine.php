@@ -3,7 +3,7 @@
 use function cli\line;
 use function cli\prompt;
 
-const gamesCount = 3;
+const GAMESCOUNT = 3;
 
 /**
 *@param array<mixed> $answers;

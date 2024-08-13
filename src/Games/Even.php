@@ -4,13 +4,14 @@ namespace even;
 
 use function cli\line;
 use function cli\prompt;
-use const gamesCount;
+
+use const GAMESCOUNT;
 
 function startEvenGame()
 {
     $answers = [];
     $questions = [];
-    for ($i = 0; $i < gamesCount; $i++) {
+    for ($i = 0; $i < GAMESCOUNT; $i++) {
         $question = rand(0, 100);
         if ($question % 2 == 0) {
             $answer = 'yes';
