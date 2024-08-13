@@ -14,6 +14,9 @@ function startPrimeGame()
     $questions = [];
     for ($i = 0; $i < GAMESCOUNT; $i++) {
         $question = rand(0, 100);
+        if ($question <= 1) {
+            $answer = 'no';
+        }
         for ($j = 2; $j < $question; $j++) {
             if ($question % $j === 0) {
                 $answer = 'no';
